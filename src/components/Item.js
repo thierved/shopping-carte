@@ -1,23 +1,11 @@
-import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-
-import {selectItem} from '../actions';
+import React from 'react';
 
 
-class Item extends Component {
-  
-  render() {
+const Item = (props) => {  
     return (
         <li className="item"
-        onClick={() => this.props.selectItem(this.props.name)}>{this.props.name}</li>
+        onClick={props.handleClick}>{props.name}</li>
     );
-  }
 }
 
-
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({selectItem}, dispatch);
-}
-
-export default connect(null, mapDispatchToProps)(Item);
+export default Item;

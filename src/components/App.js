@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+
 
 import Item from './Item';
+import {selectItem, itemToRemove} from '../actions';
 import '../App.css';
 
 class App extends Component {
   
-  renderItem() {
-    return this.props.allProducts.map(item => {
-      return <Item key={item.name} name={item.name}/>
+  renderItem(products, handleClick) {
+    return products.map(item => {
+      return <Item key={item.name} name={item.name}
+             handleClick={handleClick.bind(this, item.name)}/>
     });
   }
   
@@ -17,11 +21,12 @@ class App extends Component {
       <div className="container">
         <div className="products">
           <h3>products</h3>
-          {this.renderItem()}
+          {this.renderItem(this.props.allProducts, selectItem)}
         </div>
 
         <div className="basket">
           <h3>basket</h3>
+          {this.renderItem(this.props.selectedItems, itemToRemove)}
         </div>
       </div>
     );
@@ -30,9 +35,14 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    allProducts : state.products
+    allProducts : state.products,
+    selectedItems: state.selectedItems
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({selectItem}, dispatch);
+}
 
-export default connect(mapStateToProps, null)(App);
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

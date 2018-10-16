@@ -1,9 +1,24 @@
-export const ADD_ITEMS = 'ADD_ITEMS';
+const ADD_ITEMS = 'ADD_ITEMS';
+const REMOVE_ITEMS = 'REMOVE_ITEMS';
 
-export const selectItem = (id) => {
+const selectItem = (name) => {
     console.log('lllll')
     return {
         type: ADD_ITEMS,
-        payload: id
+        payload: name
     }
 }
+
+const itemToRemove = (name) => {
+    return {
+        type: REMOVE_ITEMS,
+        payload: name
+    }
+}
+
+export {
+    ADD_ITEMS,
+    REMOVE_ITEMS,
+    itemToRemove,
+    selectItem
+};
