@@ -6,6 +6,7 @@ h3 {
     text-align: center;
     color: #fff;
     padding-bottom: 1rem;
+    box-shadow: 0 2px 3px #ccc;
 }
 
 .container {
