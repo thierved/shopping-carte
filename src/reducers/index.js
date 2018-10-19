@@ -1,10 +1,6 @@
 import { combineReducers } from 'redux';
+import products from './product_reducer'
 
-import {products, selectedItems} from './product_reducer';
-
-const allProduct = combineReducers({
-    products,
-    selectedItems
+export default combineReducers({
+    products
 });
-
-export default allProduct;
