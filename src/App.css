@@ -2,13 +2,14 @@ body {
     background: #3E5151; 
     background: -webkit-linear-gradient(to bottom, #DECBA4, #3E5151);
     background: linear-gradient(to bottom, #DECBA4, #3E5151);
+    box-sizing: border-box;
 }
 
 h3 {
     text-align: center;
     color: #fff;
     padding: 1rem;
-    box-shadow: 0 2px 3px #ccc;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.651);
     background-color: #3e5151;
 }
 
@@ -21,7 +22,7 @@ h3 {
     padding: 1rem;
     font-family: sans-serif;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
 }
 
 .products, .basket {
@@ -34,12 +35,26 @@ h3 {
 }
 
 .item {
+    position: relative;
     list-style: none;
-    background: #eee;
+    background: #DECBA4;
     margin: 1rem auto;
-    padding: 1rem 0;
-    text-align: center;
+    padding: 1rem .5rem;
+    text-align: left;
     border-radius: 2px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.651);
+}
+
+.item span {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20%;
+    text-align: right;
+    color: #DECBA4;
+    padding: 1rem .5rem;
+    display: inline-block;
+    background-color: #3E5151;
 }
 
 .item:hover {

@@ -11,7 +11,10 @@ class App extends Component {
   
   renderItem(products) {
     return products.map(item => {
-      return <Item key={item.id} name={item.name} id={item.id}
+      return <Item key={item.id} 
+                   price={item.price}
+                   name={item.name}
+                   id={item.id}
                    handleClick={this.props.addItemToBag}/>
     });
   }
