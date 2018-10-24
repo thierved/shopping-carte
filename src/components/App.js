@@ -30,7 +30,7 @@ class App extends Component {
 
         <div className="basket">
           <h3>bag</h3>
-          {this.props.bag}
+          {this.renderItem(this.props.bag)}
         </div>
       </div>
     );
