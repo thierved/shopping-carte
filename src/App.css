@@ -74,11 +74,13 @@ ul {
 
     ul {
         display: flex;
+        justify-content: space-between;
         flex-wrap: wrap;
     }
 
     .item {
         width: 45%;
+        margin: .5rem 0;
     }
 
     .products, .basket {
@@ -87,3 +89,22 @@ ul {
         letter-spacing: normal;
     }
 }
+
+@media (max-width: 575px) {
+
+    ul {
+        flex-direction: column;
+    }
+
+    .item {
+        width: auto;
+        margin: .5rem 0;
+    }
+
+    .products, .basket {
+        width: 100%;
+        font-size: .8rem;
+        letter-spacing: normal;
+    }
+}
+
