@@ -26,12 +26,16 @@ class App extends Component {
       <div className="container">
         <div className="products">
           <h3>products</h3>
-          {this.renderItem(this.props.products, true)}
+          <ul>
+            {this.renderItem(this.props.products, true)}
+          </ul>
         </div>
 
         <div className="basket">
           <h3>bag</h3>
-          {this.renderItem(this.props.bag, false)}
+          <ul>
+            {this.renderItem(this.props.bag, false)}
+          </ul>
         </div>
       </div>
     );
