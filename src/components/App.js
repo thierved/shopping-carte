@@ -9,13 +9,14 @@ import '../App.css';
 
 class App extends Component {
   
-  renderItem(products) {
+  renderItem(products, clickable) {
     return products.map(item => {
       return <Item key={item.id} 
                    price={item.price}
                    name={item.name}
                    id={item.id}
-                   handleClick={this.props.addItemToBag}/>
+                   handleClick={this.props.addItemToBag}
+                   clickable={clickable}/>
     });
   }
   
@@ -25,12 +26,12 @@ class App extends Component {
       <div className="container">
         <div className="products">
           <h3>products</h3>
-          {this.renderItem(this.props.products)}
+          {this.renderItem(this.props.products, true)}
         </div>
 
         <div className="basket">
           <h3>bag</h3>
-          {this.renderItem(this.props.bag)}
+          {this.renderItem(this.props.bag, false)}
         </div>
       </div>
     );
